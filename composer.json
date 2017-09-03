@@ -1,0 +1,27 @@
+{
+    "name": "elementsframework/admin",
+    "description": "This package provides support for implementing admin intefaces for your elements framework modules.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "laravel/framework": "5.3.*",
+        "backpack/base": "0.7.17",
+        "backpack/crud": "*",
+        "backpack/permissionmanager": "*"
+    },
+    "authors": [
+        {
+            "name": "Igor Rinkovec",
+            "email": "shiqqqi@gmail.com"
+        }
+    ],
+    "minimum-stability": "beta",
+    "require-dev": {
+        "phpunit/phpunit": "^5.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "ElementsFramework\\Admin\\": "src/"
+        }
+    }
+}
