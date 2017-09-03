@@ -7,7 +7,7 @@
         "laravel/framework": "5.3.*",
         "backpack/base": "0.7.17",
         "backpack/crud": "*",
-        "backpack/permissionmanager": "*"
+        "backpack/permissionmanager": "^2.1"
     },
     "authors": [
         {
