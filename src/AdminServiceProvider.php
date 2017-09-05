@@ -40,8 +40,8 @@ class AdminServiceProvider extends ServiceProvider
         $this->app->register(CrudServiceProvider::class);
         $this->app->register(PermissionManagerServiceProvider::class);
         $this->app->register(PermissionManagerServiceProvider::class);
-        $this->app->register(Cviebrock\EloquentSluggable\ServiceProvider::class);
-        $this->app->register(Backpack\PageManager\PageManagerServiceProvider::class);
+        $this->app->register(\Cviebrock\EloquentSluggable\ServiceProvider::class);
+        $this->app->register(\Backpack\PageManager\PageManagerServiceProvider::class);
     }
 
 }
