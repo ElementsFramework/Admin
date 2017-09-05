@@ -17,12 +17,16 @@ class AdminServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        // Migrations
+        $this->loadMigrationsFrom(__DIR__ . '/Migration');
+
         $this->publishes([
-            __DIR__.'Config/laravel-permission.php' => config_path('laravel-permission.php'),
-            __DIR__.'Config/backpack/base.php' => config_path('backpack/base.php'),
-            __DIR__.'Config/backpack/crud.php' => config_path('backpack/crud.php'),
-            __DIR__.'Config/backpack/permissionmanager.php' => config_path('backpack/permissionmanager.php'),
+            __DIR__.'/Config/laravel-permission.php' => config_path('laravel-permission.php'),
+            __DIR__.'/Config/backpack/base.php' => config_path('backpack/base.php'),
+            __DIR__.'/Config/backpack/crud.php' => config_path('backpack/crud.php'),
+            __DIR__.'/Config/backpack/permissionmanager.php' => config_path('backpack/permissionmanager.php'),
         ]);
+        $this->loadRoutesFrom(__DIR__.'/routes/menucrud.php');
     }
 
     /**
@@ -36,6 +40,8 @@ class AdminServiceProvider extends ServiceProvider
         $this->app->register(CrudServiceProvider::class);
         $this->app->register(PermissionManagerServiceProvider::class);
         $this->app->register(PermissionManagerServiceProvider::class);
+        $this->app->register(Cviebrock\EloquentSluggable\ServiceProvider::class);
+        $this->app->register(Backpack\PageManager\PageManagerServiceProvider::class);
     }
 
 }
